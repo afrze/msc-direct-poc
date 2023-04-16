@@ -5,7 +5,7 @@ import {
   MscLogo,
   MscMobileLogo,
   User,
-} from "../../assets/images";
+} from "../../assets/icons";
 import { useWindowSize } from "../../hooks";
 import Input from "../Input";
 
@@ -13,8 +13,6 @@ type Props = {};
 
 const Header = (props: Props) => {
   const { width } = useWindowSize();
-
-  console.log('object', width);
 
   // This is for mobile and tab devices
   if (width && width < 700) {
@@ -46,31 +44,31 @@ const Header = (props: Props) => {
         </div>
       </div>
     );
-  } else {
-    return (
-      <div className="flex justify-between items-center mx-4 my-4">
-        <div className="flex gap-4 items-center grow pr-4">
-          <div>
-            <MscLogo />
-          </div>
-          <div className="grow">
-            <Input />
-          </div>
+  }
+
+  return (
+    <div className="flex justify-between items-center mx-4 my-4 gap-5 bg-white">
+      <div className="flex gap-4 items-center grow pr-4">
+        <div>
+          <MscLogo />
         </div>
-        <div className="flex gap-2">
-          <span>
-            <Info />
-          </span>
-          <span>
-            <User />
-          </span>
-          <span>
-            <Cart />
-          </span>
+        <div className="w-full">
+          <Input />
         </div>
       </div>
-    );
-  }
+      <div className="flex items-center gap-2">
+        <span>
+          <Info />
+        </span>
+        <span>
+          <User />
+        </span>
+        <span>
+          <Cart />
+        </span>
+      </div>
+    </div>
+  );
 };
 
 export default Header;

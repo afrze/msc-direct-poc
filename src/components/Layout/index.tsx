@@ -6,7 +6,7 @@ type Props = {
 
 const Layout = (props: Props) => {
   return (
-    <div>
+    <div className='md:max-w-[1400px] md:mx-auto p-2'>
       <Header />
       {props.children}
     </div>
